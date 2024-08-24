@@ -12,7 +12,6 @@ const connection =
 
 export const config: Knex.Config = {
   client: env.DATABASE_CLIENT,
-  // connection,
   connection,
   useNullAsDefault: true,
   migrations: {
