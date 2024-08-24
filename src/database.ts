@@ -6,10 +6,13 @@ const connection =
     ? {
         filename: env.DATABASE_URL,
       }
-    : env.DATABASE_URL
+    : {
+        connectionString: env.DATABASE_URL,
+      }
 
 export const config: Knex.Config = {
-  client: 'sqlite',
+  client: env.DATABASE_CLIENT,
+  // connection,
   connection,
   useNullAsDefault: true,
   migrations: {
